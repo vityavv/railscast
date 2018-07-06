@@ -1,0 +1,62 @@
+[global/wm]
+margin-bottom = 5
+
+[bar/victor]
+background = #c02b2b2b
+foreground = #e6e1dc
+border-color = #6d9cbe
+font-0 = "Go Mono:size=12"
+
+border-size = 3
+width = 1910
+height = 30
+offset-x = 5
+offset-y = 5
+padding = 1
+module-margin = 1
+
+modules-left = ewmh
+modules-center = date
+modules-right = cpu memory network
+
+
+[module/ewmh]
+type = internal/xworkspaces
+enable-scroll = false
+
+label-active = " %icon% "
+label-active-foreground = #2b2b2b
+label-active-background = #c0e6e1dc
+label-occupied = " %icon% "
+lavel-urgent =" %icon% "
+label-empty = " %icon% "
+
+icon-0 = desktop 1;1
+icon-1 = desktop 2;2
+icon-2 = desktop 3;3
+icon-3 = desktop 4;4
+icon-default = X
+
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %A, %B%e
+time = %I:%M
+label = %date% - %time%
+
+
+[module/cpu]
+type = internal/cpu
+label = CPU: %percentage%%
+
+[module/memory]
+type = internal/memory
+label = RAM: %gb_used%/%gb_total%
+
+[module/network]
+type = internal/network
+interface = wlp2s0
+format-connected = <label-connected>
+label-connected = Down: %downspeed%
+
